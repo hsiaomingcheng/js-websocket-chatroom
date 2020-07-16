@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "搭配node.js建置一個線上環境，做到能夠多人線上聊天",
   "main": "server.js",
+  "engines": {
+    "node": "12.17.x"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
@@ -16,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/hsiaomingcheng/js-websocket-chatroom/issues"
   },
-  "homepage": "https://github.com/hsiaomingcheng/js-websocket-chatroom#readme"
+  "homepage": "https://github.com/hsiaomingcheng/js-websocket-chatroom#readme",
+  "dependencies": {
+    "bufferutil": "^4.0.1",
+    "express": "^4.17.1",
+    "utf-8-validate": "^5.0.2",
+    "ws": "^7.3.1"
+  }
 }
