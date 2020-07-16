@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>聊天室</title>
+    <link rel="stylesheet" href="/public/index.css" type="text/css">
+    <script>
+        let HOST = location.origin.replace(/^http/, 'ws');
+        let ws = new WebSocket(HOST);
+        let el;
+
+        ws.onmessage = (event) => {
+            el = document.getElementById('server-time');
+            el.innerHTML = 'Server time: ' + event.data;
+        };
+    </script>
+</head>
+
+<body>
+    <main>
+        <p id="server-time"></p>
+        <h1>克里斯的聊天室</h1>
+
+        <div class="message-wrap">
+            <div class="message-scroll">
+                <div id="message-list" class="message-list">
+                    <p>歡迎來到聊天室~~</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="name-wrap">
+            <span>暱稱：</span>
+            <span id="name-text"></span>
+        </p>
+
+        <form>
+            <input type="text" id="message" placeholder="請輸入訊息">
+            <input type="submit" id="submit-button" value="送出訊息">
+        </form>
+    </main>
+    <script src='/public/index.js'></script>
+</body>
+
+</html>
